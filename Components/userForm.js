@@ -3,11 +3,20 @@ import { View, Text, StyleSheet, Dimensions, Switch, Button} from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Input from './Input'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
+
 
 
 const {width, height} = Dimensions.get('window')
 
 export default function UserForm() {
+
+  const navigation = useNavigation()
+
+  const goToProfile = () => {
+    navigation.navigate('Profile')
+  }
+  
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -26,6 +35,8 @@ export default function UserForm() {
     }
   }
 
+
+ 
   // const onDateFocus = () => {
   //   setShow(true)
   // }
@@ -98,7 +109,7 @@ export default function UserForm() {
         </View>
         
         <View style={{marginTop: width * 0.04}}>
-          <Button title="Submit" />
+        <Button title="Go to Profile" onPress={goToProfile} />
         </View>
 
     </View>
