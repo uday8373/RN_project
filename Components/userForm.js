@@ -2,12 +2,19 @@ import React, {useState} from 'react'
 import { View, Text, StyleSheet, Dimensions, Switch, Button} from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Input from './Input'
+import {useNavigation} from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 const {width, height} = Dimensions.get('window')
 
 export default function UserForm() {
+  
+  const navigation = useNavigation()
+
+  const goToProfile = () => {
+    navigation.navigate('Profile')
+  }
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -18,6 +25,7 @@ export default function UserForm() {
   const [dob, setDob] = useState(new Date())
   const [show, setShow] = useState(false);
   const [acceptTerm, setTerms] = useState(false);
+  
 
   const onChange = (event, selectedDate) => {
     setShow(false)
@@ -25,6 +33,7 @@ export default function UserForm() {
       setDob(selectedDate)
     }
   }
+  
 
   // const onDateFocus = () => {
   //   setShow(true)
@@ -97,10 +106,10 @@ export default function UserForm() {
           <Switch value={acceptTerm} onChange={() => setTerms(!acceptTerm)} />
         </View>
         
-        <View style={{marginTop: width * 0.04}}>
+        <View style={{marginTop: width * 0.04,marginBottom:10}}>
           <Button title="Submit" />
         </View>
-
+        <Button  title="Go to profile page" onPress={goToProfile} />
     </View>
   )
 }
