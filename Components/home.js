@@ -1,16 +1,16 @@
 import React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+// import { useNavigation } from '@react-navigation/native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Home() {
 
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
-  const goToSignup = () => {
-    navigation.navigate('Signup')
-    // alert("123")
-  }
+  // const goToSignup = () => {
+  //   navigation.navigate('Signup')
+  //   // alert("123")
+  // }
 
   return (
     <View style={styles.container}>
@@ -60,7 +60,8 @@ export default function Home() {
             <Text style={styles.texts}>Case study</Text></View>
         </View>
       </View>
-      <TouchableOpacity style={styles.btn} onPress={() => goToSignup()}><Text style={styles.btntxt}>Go to signup</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.btn}><Text style={styles.btntxt}>Go to signup</Text></TouchableOpacity>
+      {/* <TouchableOpacity style={styles.btn} onPress={() => goToSignup()}><Text style={styles.btntxt}>Go to signup</Text></TouchableOpacity> */}
     </View>
   )
 }

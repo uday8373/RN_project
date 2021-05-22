@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { View, Text, StyleSheet, Dimensions, Switch, Button} from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {useNavigation} from '@react-navigation/native'
+// import {useNavigation} from '@react-navigation/native'
 import Input from './Input'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -9,12 +9,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window')
 
 export default function UserForm() {
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
-  const goToProfile = () => {
-    navigation.navigate('profile')
-    // alert("123")
-  }
+  // const goToProfile = () => {
+  //   navigation.navigate('profile')
+  //   // alert("123")
+  // }
 
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -105,7 +105,8 @@ export default function UserForm() {
         </View>
         
         <View style={{marginTop: width * 0.04}}>
-        <Button title="Go to profile" onPress={() => goToProfile()} />
+        {/* <Button title="Go to profile" onPress={() => goToProfile()} /> */}
+        <Button title="Go to profile" />
         </View>
 
     </View>
