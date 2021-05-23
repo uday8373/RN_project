@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button,StyleSheet,Dimensions } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -9,11 +9,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Home() {
 
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
 
-  const goToSignup = () => {
-    navigation.navigate('Signup')
-  }
+  // const goToSignup = () => {
+  //   navigation.navigate('Signup')
+  // }
 
   return (
     <View style={styles.container}>
@@ -49,7 +49,7 @@ export default function Home() {
         </View>
       </View>
 
-      <Button title="Go to signup" onPress={goToSignup} />
+      {/* <Button title="Go to signup" onPress={goToSignup} /> */}
     </View>
   )
 }

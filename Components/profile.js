@@ -187,24 +187,24 @@ const styles = StyleSheet.create({
         color: "red"
     },
     container14: {
-        height:100,
-        width:"50%",
-        alignItems:"center",
-        marginVertical:10,
+        height: 100,
+        width: "50%",
+        alignItems: "center",
+        marginVertical: 10,
         borderColor: '#C4C6CB',
         borderWidth: 1,
-        borderLeftWidth:0,
-        paddingTop:25
+        borderLeftWidth: 0,
+        paddingTop: 25
     },
     container15: {
-        height:100,
-        width:"50%",
-        alignItems:"center",
-        marginVertical:10,
+        height: 100,
+        width: "50%",
+        alignItems: "center",
+        marginVertical: 10,
         borderColor: '#C4C6CB',
         borderWidth: 1,
-        borderRightWidth:0,
-        paddingTop:25
+        borderRightWidth: 0,
+        paddingTop: 25
     },
     container16: {
         fontSize: 25,
