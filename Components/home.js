@@ -1,7 +1,8 @@
-import React from 'react';
-import { View, Text, Button,StyleSheet,Dimensions } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, Button,StyleSheet,Dimensions,TouchableOpacity } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native'
 
 
 
@@ -14,6 +15,22 @@ export default function Home() {
   // const goToSignup = () => {
   //   navigation.navigate('Signup')
   // }
+
+  const navigation = useNavigation()
+
+  useEffect(() => {
+    updateHeader()
+  })
+
+  const HeaderLeft = () => (
+    <TouchableOpacity onPress={() => navigation.toggleDrawer()} style={{ marginLeft: 10 }}>
+      <Icon name="bars" size={32} style={styles.icons} />
+    </TouchableOpacity>
+  )
+  const updateHeader = () => {
+    navigation.setOptions({ headerLeft: () => <HeaderLeft /> });
+  }
+
 
   return (
     <View style={styles.container}>

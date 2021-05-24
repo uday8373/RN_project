@@ -1,12 +1,15 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import UserForm from './../Components/userForm'
 import HomeScreen from './../Components/home'
 import ProfileScreen from "./../Components/profile"
 import SettingsScreen from "./../Components/setting"
+import HeaderLeft from "./header"
 
 
 
@@ -14,17 +17,27 @@ const HomeStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const SingupStack = createStackNavigator();
 const SettingStack = createStackNavigator();
+// const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-
 
 function HomeStackScreen({ navigation }) {
   return (
-
-    <HomeStack.Navigator screenOptions={{ headerStyle: { backgroundColor: "#009387" }, headerTintColor: "#fff", headerTitleStyle: "bold" }}>
+    
+    <HomeStack.Navigator screenOptions={{
+      headerStyle: {
+        backgroundColor: "#009387"
+      },
+      headerTintColor: "#fff",
+      headerLeft:()=><View><Text>hello</Text></View>,
+      headerTitleStyle: "bold"
+    }}>
       <HomeStack.Screen name="Home" component={HomeScreen}
         options={{
-          headerLeft: () => { }
+          headerLeft: () => {
+            <Icon name="home" size={40} onPress={navigation.openDrawer()} />
+          }
         }} />
+
     </HomeStack.Navigator>
   );
 }
@@ -36,6 +49,7 @@ function ProfileStackScreen({ navigation }) {
         backgroundColor: "#009387"
       },
       headerTintColor: "#fff",
+      headerLeft:<HeaderLeft/>,
       headerTitleStyle: "bold"
     }}>
       <ProfileStack.Screen name="Profile" component={ProfileScreen} />
@@ -50,6 +64,7 @@ function SingupStackScreen({ navigation }) {
         backgroundColor: "#009387"
       },
       headerTintColor: "#fff",
+      headerLeft:<HeaderLeft/>,
       headerTitleStyle: "bold"
     }}>
       <SingupStack.Screen name="Signup" component={UserForm} />
@@ -65,9 +80,11 @@ function SettingStackScreen({ navigation }) {
         backgroundColor: "#009387"
       },
       headerTintColor: "#fff",
+      headerLeft:<HeaderLeft/>,
       headerTitleStyle: "bold"
     }}>
-      <SettingStack.Screen name="Settings" component={SettingsScreen} />
+      <SettingStack.Screen name="Setting" component={SettingsScreen} />
+
     </SettingStack.Navigator>
   );
 }
@@ -77,55 +94,55 @@ function SettingStackScreen({ navigation }) {
 export const Navigation = () => {
   return (
     // <Stack.Navigator>
-    //     <Stack.Screen name="Home" component={HomeScreen} />
-    //     <Stack.Screen name="Signup" component={UserForm} />
-    //     <Stack.Screen name="Profile" component={ProfileScreen} />
+    // <Stack.Screen name="Home" component={HomeScreen} />
+    // <Stack.Screen name="Signup" component={UserForm} />
+    // <Stack.Screen name="Profile" component={ProfileScreen} />
     // </Stack.Navigator>
     // <Tab.Navigator
     // screenOptions={({ route }) => ({
-    //   tabBarIcon: ({ focused, color, size }) => {
-    //     let iconName;
+    // tabBarIcon: ({ focused, color, size }) => {
+    // let iconName;
 
-    //     if (route.name === 'Home') {
-    //       iconName = focused
-    //         ? 'home'
-    //         : 'home';
-    //     } else if (route.name === 'Settings') {
-    //       iconName = focused ? 'cog' : 'cog';
-    //     }
-    //     else if (route.name === 'Profile') {
-    //       iconName = focused ? 'users' : 'users';
-    //     }
-    //     else if (route.name === 'Signup') {
-    //       iconName = focused ? 'user-plus' : 'user-plus';
-    //     }
+    // if (route.name === 'Home') {
+    // iconName = focused
+    // ? 'home'
+    // : 'home';
+    // } else if (route.name === 'Settings') {
+    // iconName = focused ? 'cog' : 'cog';
+    // }
+    // else if (route.name === 'Profile') {
+    // iconName = focused ? 'users' : 'users';
+    // }
+    // else if (route.name === 'Signup') {
+    // iconName = focused ? 'user-plus' : 'user-plus';
+    // }
 
 
-    //     return <Icon name={iconName} size={size} color={color} />;
-    //   },
+    // return <Icon name={iconName} size={size} color={color} />;
+    // },
     // })}
     // tabBarOptions={{
-    //   activeTintColor: 'tomato',
-    //   inactiveTintColor: 'gray',
+    // activeTintColor: 'tomato',
+    // inactiveTintColor: 'gray',
     // }}>
-    //     <Tab.Screen name="Home" component={HomeScreen} />
-    //     <Tab.Screen name="Settings" component={SettingsScreen} />
-    //     <Tab.Screen name="Signup" component={UserForm} />
-    //     <Tab.Screen name="Profile" component={ProfileScreen} />
-    //   </Tab.Navigator>
+    // <Tab.Screen name="Home" component={HomeScreen} />
+    // <Tab.Screen name="Settings" component={SettingsScreen} />
+    // <Tab.Screen name="Signup" component={UserForm} />
+    // <Tab.Screen name="Profile" component={ProfileScreen} />
+    // </Tab.Navigator>
 
 
-    //   <Stack.Navigator>
-    //     <Stack.Screen name="Home" component={HomeScreen} />
-    //     <Stack.Screen name="Signup" component={UserForm} />
-    //     <Stack.Screen name="Profile" component={ProfileScreen} />
+    // <Stack.Navigator>
+    // <Stack.Screen name="Home" component={HomeScreen} />
+    // <Stack.Screen name="Signup" component={UserForm} />
+    // <Stack.Screen name="Profile" component={ProfileScreen} />
     // </Stack.Navigator>
 
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeStackScreen} />
       <Drawer.Screen name="Signup" component={SingupStackScreen} />
       <Drawer.Screen name="Profile" component={ProfileStackScreen} />
-      <Drawer.Screen name="Settings" component={SettingStackScreen} />
+      <Drawer.Screen name="Setting" component={SettingStackScreen} />
     </Drawer.Navigator>
 
 
