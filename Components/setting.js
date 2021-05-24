@@ -11,7 +11,7 @@ export default function Setting() {
 
 
         <View>
-            <Text>abc</Text>
+            <Text style={{textAlign:"center"}}>abc</Text>
         </View>
 
     );
