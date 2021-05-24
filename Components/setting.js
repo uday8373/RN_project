@@ -14,21 +14,6 @@ export default function Setting() {
             <Text>abc</Text>
         </View>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    )
+    );
 
 }

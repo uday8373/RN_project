@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, Button, StyleSheet, Dimensions, Image } from 'react-native'
+import React from 'react';
+import { View, Text, Button, StyleSheet, Dimensions, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window')

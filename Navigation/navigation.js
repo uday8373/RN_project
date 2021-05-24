@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 // import { NavigationContainer } from '@react-navigation/native';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import UserForm from './../Components/userForm'
-import HomeScreen from './../Components/home'
-import ProfileScreen from "./../Components/profile"
-import SettingsScreen from "./../Components/setting"
-import HeaderLeft from "./header"
+import UserForm from './../Components/userForm';
+import HomeScreen from './../Components/home';
+import ProfileScreen from "./../Components/profile";
+import SettingsScreen from "./../Components/setting";
+import HeaderLeft from "./header";
 
 
 

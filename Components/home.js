@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { View, Text, Button,StyleSheet,Dimensions,TouchableOpacity } from 'react-native';
 // import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
 
 
 

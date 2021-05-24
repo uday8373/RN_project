@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, Switch, Button } from 'react-native'
 import DateTimePicker from '@react-native-community/datetimepicker';
-import Input from './Input'
+import Input from './Input';
 import Icon from 'react-native-vector-icons/FontAwesome';
 // import { useNavigation } from '@react-navigation/native';
 
